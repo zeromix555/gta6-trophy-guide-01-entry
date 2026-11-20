@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-checklist.jpg","note":"Cover: checklist with sample progress (8/55), the missable trophy's guide + sources + warning open beside it","sample":true,"trophy":"positive-mental-attitude","view":"checklist","viewport":{"height":800,"width":1280}},{"file":"2-roadmap.jpg","note":"Roadmap to the platinum, three stages with per-stage progress","view":"roadmap","viewport":{"height":800,"width":1280}},{"file":"3-missables.jpg","note":"Missables view in dark theme with the spoiler setting on","spoiler":"on","theme":"dark","view":"missables","viewport":{"height":800,"width":1280}},{"file":"4-nextup.jpg","note":"Next-up planner in roadmap order, missable first","spoiler":"off","theme":"light","view":"nextup","viewport":{"height":800,"width":1280}}]

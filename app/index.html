@@ -3,23 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Vice City Platinum — GTA 6 Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: cited guides, roadmap to the platinum, missable flags, saved progress.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="top">
+  <div class="title-block">
+    <p class="eyebrow">Grand Theft Auto VI · PlayStation 5 · 55 trophies</p>
+    <h1>Vice City Platinum</h1>
+    <p class="subtitle">GTA 6 trophy guide &amp; tracker — every trophy with its official name, description and grade, a guide in our own words with its sources, a roadmap to the platinum, and progress saved in your browser. Works fully offline.</p>
+  </div>
+  <div class="progress-block" aria-label="Platinum progress">
+    <div class="progress-numbers"><strong id="earned-count">0</strong> of <span id="total-count">55</span> earned · <span id="earned-pct">0%</span> to platinum</div>
+    <div class="progress-bar"><div id="progress-fill" class="progress-fill" style="width:0%"></div></div>
+    <div class="grade-progress" id="grade-progress"></div>
+  </div>
+  <div class="toggles">
+    <button id="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
+    <button id="spoiler-toggle" type="button" aria-pressed="false">Hide story spoilers: off</button>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<nav class="tabs" aria-label="Guide sections">
+  <button type="button" data-view="checklist" class="tab active" aria-current="page">Checklist</button>
+  <button type="button" data-view="roadmap" class="tab">Roadmap to Platinum</button>
+  <button type="button" data-view="missables" class="tab">Missables <span class="tab-badge" id="missable-count">1</span></button>
+  <button type="button" data-view="nextup" class="tab">Next up</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="controls">
+      <label class="search-label">Search <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
+      <label>Kind
+        <select id="kind-filter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="online">Online</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="grade-filter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="check-label"><input id="hide-earned" type="checkbox"> Hide earned</label>
+      <span class="controls-spacer"></span>
+      <button id="export-btn" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="import-file" type="file" accept="application/json,.json"></label>
+      <button id="sample-btn" type="button" title="Mark a sample set of trophies earned so you can try the tracker">Try sample progress</button>
+      <button id="reset-btn" type="button">Reset</button>
+    </div>
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+    <div class="layout">
+      <ol id="trophy-list" class="trophy-list"></ol>
+      <aside id="detail" class="detail" aria-label="Selected trophy guide">
+        <p class="detail-empty">Select a trophy to read its guide, sources and notes.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <p class="section-intro">One playthrough, about 200 hours (PowerPyx: difficulty 4/10). No online trophies, no difficulty setting, no mission replay — so the order below matters. Progress you bank during the story already counts toward the 100% checklist.</p>
+    <div id="roadmap-stages" class="roadmap-stages"></div>
+  </section>
+
+  <section id="view-missables" class="view" hidden>
+    <p class="section-intro">Only one trophy is flagged as potentially missable by the guides — and it is easy to protect if you know about it before Chapter 1 ends. Everything else can be earned in free-roam after the story.</p>
+    <div id="missable-list" class="missable-list"></div>
+  </section>
+
+  <section id="view-nextup" class="view" hidden>
+    <p class="section-intro">Your next steps, in roadmap order: finish the story first, then the 100% checklist grind, then stranger strands and cleanup. Earned trophies drop out of this list automatically.</p>
+    <ol id="nextup-list" class="nextup-list"></ol>
+  </section>
+</main>
+
+<footer>
+  <p>Official trophy names, descriptions and grades as PlayStation publishes them (via Exophase and PSNProfiles, agreeing on all 55). Every guide is written in our own words and cites its sources beside it — see each trophy's guide for its links. Difficulty, time and missable estimates: <a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/">PowerPyx — GTA 6 Trophy Guide &amp; Roadmap</a>. No Rockstar logo, artwork or game screenshots are used. This guide works with the network off: it loads only its own files.</p>
+  <p class="footer-note">Progress, notes and settings are saved in this browser only (localStorage). Export a file to keep a backup or move progress to another browser.</p>
+</footer>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>
